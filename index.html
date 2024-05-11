@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-[#181028] flex justify-center items-center min-h-screen">
+    <div id="circle" class="circle"></div>
+    
+    <div id="menu" class="p-4 rounded-lg w-64">
+        <button id="btn" class="btn flex flex-col gap-[6px] w-10 h-10 p-2">
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
+        </button>
+
+        <nav class="text-white p-8">
+            <ul class="space-y-4 font-bold text-xl">
+                <li><a class="hov text-slate-400 tracking-wider hover:text-purple-500" href="#">Home</a></li>
+                <li><a class="hov text-slate-400 tracking-wider hover:text-purple-500" href="#">About</a></li>
+                <li><a class="hov text-slate-400 tracking-wider hover:text-purple-500" href="#">Portfolio</a></li>
+                <li><a class="hov text-slate-400 tracking-wider hover:text-purple-500" href="#">Blog</a></li>
+                <li><a class="hov text-slate-400 tracking-wider hover:text-purple-500" href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+    <script>
+
+        const menu = document.getElementById('menu');
+const btn = document.getElementById('btn');
+const circle = document.getElementById('circle');
+
+btn.addEventListener('click', () => {
+    menu.classList.toggle('open');
+});
+
+document.addEventListener('mousemove', (e) => {
+    const height = circle.offsetHeight;
+    const width = circle.offsetWidth;
+
+    if (e.target.tagName === 'A' ||
+        e.target.tagName === 'BUTTON' ||
+        e.target.parentNode.tagName === 'BUTTON') {
+        circle.classList.add('big');
+    } else {
+        circle.classList.remove('big');
+    }
+
+    setTimeout(() => { 
+        circle.style.left = `${e.pageX - width/2}px`;
+        circle.style.top = `${e.pageY - height/2}px`;
+    }, 20);
+});
+    </script>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt dolore 
+    adipisci delectus, doloremque doloribus suscipit assumenda, iusto 
+    commodi voluptatibus, vel dolorum? Vero alias minima adipisci est 
+    ad laudantium, commodi, voluptatem enim culpa rem labore officia 
+    deserunt repudiandae sapiente facere, dolore perferendis asperiores 
+    quam esse sint eos nobis? Cupiditate, beatae hic qui temporibus saepe vel 
+    recusandae magni optio deserunt velit ad dignissimos incidunt, ipsam porro
+     provident cumque molestiae explicabo consequatur quisquam! Blanditiis 
+     corrupti eius quas facere eaque, repellendus, omnis ex rem laudantium
+      iure unde. Libero quam expedita ipsa vero non delectus, aliquam ea sequi 
+            Temporibus illum laudantium tempora quisquam nobis? Iusto, i
+            taque odio. Porro assumenda culpa iste! Illum impedit tenetur
+             cupiditate maiores deserunt odit odio suscipit quis doloremque 
+             adipisci ullam repellat eius mollitia distinctio, laudantium porro
+              dignissimos unde id provident, aliquam necessitatibus quibusdam? 
+              Adipisci, eos omnis. Porro perspiciatis neque nihil optio autem.</p>
+</body>
+
+</html>

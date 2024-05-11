@@ -1,0 +1,89 @@
+/* Add your CSS here */
+.line {
+    background: #fff;
+    position: relative;
+    height: 2px;
+    width: 100%;
+    transition: background 0.3s;
+    z-index: 10;
+}
+p{
+    color: white;
+}
+.btn:hover .line {
+    background: #181028;
+}
+
+#menu {
+    transition: background 0.3s;
+}
+
+#menu.open {
+    background: #2C2446;
+    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+}
+
+#menu .btn .line {
+    transition: transform 0.3s, opacity 0.3s;
+    transform-origin: center left;
+}
+
+#menu.open .btn .line:nth-of-type(1) {
+    transform: rotate(45deg);
+}
+
+#menu.open .btn .line:nth-of-type(2) {
+    opacity: 0;
+}
+
+#menu.open .btn .line:nth-of-type(3) {
+    transform: rotate(-45deg);
+}
+
+#menu nav {
+    transition: transform 0.3s;
+    transform-origin: top left;
+    transform: scale(0);
+}
+
+#menu.open nav {
+    transform: scale(1);
+}
+
+.hov {
+    position: relative;
+}
+
+.hov::before {
+    content: '';
+    background: #a855f7;
+    opacity: 0;
+    position: absolute;
+    left: -3rem;
+    top: 0;
+    height: 120%;
+    width: 3px;
+    transition: opacity 0.3s;
+}
+
+.hov:hover::before {
+    opacity: 1;
+}
+
+.circle {
+    border: 2px solid white;
+    border-radius: 50%;
+    box-shadow: 0 0 10px white;
+    pointer-events: none;
+    position: fixed;
+    top: -10rem;
+    left: -10rem;
+    height: 2rem;
+    width: 2rem;
+    transition: transform 0.4s, background 0.4s;
+}
+
+.circle.big {
+    background: white;
+    transform: scale(2);
+}
